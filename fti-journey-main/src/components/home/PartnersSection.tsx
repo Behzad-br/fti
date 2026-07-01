@@ -28,15 +28,7 @@ const PartnersSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="inline-flex items-center justify-center p-2 px-5 mb-6 bg-white rounded-full shadow-sm border border-primary/10">
-                        <span className="relative flex h-3 w-3 mr-3">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-                        </span>
-                        <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm">
-                            Partnerships
-                        </span>
-                    </div>
+
                     <h2 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 drop-shadow-sm pb-2">
                         Global Opportunity
                     </h2>
