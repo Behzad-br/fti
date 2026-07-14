@@ -90,7 +90,7 @@ const Contact = () => {
             {/* Global Branch Network - Full Width Rows */}
             <div className="mt-32 space-y-16">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Our Global Network</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Global Opportunities</h2>
                 <p className="text-slate-500 text-lg">Visit any of our 5 official branches for a one-on-one counseling session with our expert consultants.</p>
               </div>
 

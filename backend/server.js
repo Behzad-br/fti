@@ -3,8 +3,9 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
-const authRoutes = require('./routes/authRoutes');
-const cmsRoutes = require('./routes/cmsRoutes');
+// Parent Router
+const apiRoutes = require('./routes');
+const { errorHandler, notFound } = require('./middleware/errorMiddleware');
 
 // Load env vars
 dotenv.config();
@@ -18,24 +19,22 @@ const app = express();
 app.use(express.json({ limit: '50mb' })); // Support large images (base64)
 app.use(cors());
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/cms', cmsRoutes);
-
+// Health Check
 app.get('/', (req, res) => {
-    res.send('FTI Journey API is running...');
+    res.send('FTI Journey API is running with MVC structure...');
 });
 
-// Error Handling Middleware
-app.use((err, req, res, next) => {
-    const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
-    res.status(statusCode);
-    res.json({
-        message: err.message,
-        stack: process.env.NODE_ENV === 'production' ? null : err.stack,
-    });
-});
+// API Routes
+app.use('/api', apiRoutes);
+
+// Unmatched Routes
+app.use(notFound);
+
+// Global Error Handler (must be last)
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`✅ Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+});

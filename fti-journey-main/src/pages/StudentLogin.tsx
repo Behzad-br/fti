@@ -9,10 +9,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { useAuth } from '@/context/AuthContext';
 
 // Form validation schema
 const loginSchema = z.object({
-    studentId: z.string().min(5, { message: "Please enter a valid Student ID" }),
+    email: z.string().email({ message: "Please enter a valid email address" }),
     password: z.string().min(6, { message: "Password must be at least 6 characters" }),
 });
 
@@ -22,32 +23,31 @@ const StudentLogin = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const form = useForm<LoginFormValues>({
         resolver: zodResolver(loginSchema),
         defaultValues: {
-            studentId: "",
+            email: "",
             password: "",
         },
     });
 
     const onSubmit = async (data: LoginFormValues) => {
         setIsLoading(true);
-
-        // Simulate API call
-        setTimeout(() => {
-            setIsLoading(false);
-            console.log("Login data:", data);
-
-            // For demo purposes, just toast success
+        try {
+            await login(data.email, data.password, 'student');
             toast.success("Welcome, Student!", {
                 description: "You have successfully logged into the portal.",
             });
-
-            // Redirect to a placeholder dashboard or back home
-            // Since we don't have a student dashboard yet, we'll go home
-            setTimeout(() => navigate('/'), 1000);
-        }, 1500);
+            navigate('/');
+        } catch (error: unknown) {
+            const message =
+                error instanceof Error ? error.message : 'Login failed. Please check your credentials.';
+            toast.error("Login failed", { description: message });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -104,21 +104,21 @@ const StudentLogin = () => {
 
                         {/* Student ID Field */}
                         <div className="space-y-2">
-                            <Label htmlFor="studentId" className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Student ID / Email</Label>
+                            <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Email Address</Label>
                             <div className="relative group">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-600 transition-colors">
                                     <User className="w-5 h-5" />
                                 </div>
                                 <Input
-                                    {...form.register("studentId")}
-                                    id="studentId"
-                                    type="text"
-                                    placeholder="Enter your Student ID"
+                                    {...form.register("email")}
+                                    id="email"
+                                    type="email"
+                                    placeholder="Enter your email address"
                                     className="pl-12 h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all rounded-2xl text-base"
                                 />
                             </div>
-                            {form.formState.errors.studentId && (
-                                <span className="text-red-500 text-xs ml-1 block font-medium">{form.formState.errors.studentId.message}</span>
+                            {form.formState.errors.email && (
+                                <span className="text-red-500 text-xs ml-1 block font-medium">{form.formState.errors.email.message}</span>
                             )}
                         </div>
 

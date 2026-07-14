@@ -29,8 +29,8 @@ const PartnersSection = () => {
                     transition={{ duration: 0.5 }}
                 >
 
-                    <h2 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 drop-shadow-sm pb-2">
-                        Global Opportunity
+                    <h2 className="text-5xl md:text-7xl font-black drop-shadow-sm pb-2">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900">Global</span> <span className="text-primary">Opportunity</span>
                     </h2>
                     <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
                         FTI offers the following universities admission across the globe.

@@ -14,7 +14,7 @@ interface TeamMember {
 const defaultTeam: TeamMember[] = [
     {
         id: '1',
-        name: 'Zahoor Ilahi',
+        name: 'Zahoor Elahi',
         role: 'Founder & CEO',
         image: '/ceo.jpg',
         category: 'General'

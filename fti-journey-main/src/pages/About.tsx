@@ -19,7 +19,7 @@ interface TeamMember {
 const defaultTeam = [
   {
     id: '1',
-    name: 'Zahoor Ilahi',
+    name: 'Zahoor Elahi',
     role: 'Founder & CEO',
     image: '/ceo.jpg',
   },
@@ -179,9 +179,14 @@ const About = () => {
                   transition={{ delay: 0.3 }}
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-[1.1] md:leading-[1] tracking-tighter relative z-10"
                 >
-                  {cmsData.aboutHeroTitle.includes('Since') ? (
+                  {cmsData.aboutHeroTitle.includes('Nurturing Careers') ? (
+                    <>
+                      <span className="text-orange-500">Nurturing</span> <span className="text-green-500">Careers</span><br />
+                      <span className="text-white drop-shadow-2xl italic tracking-tightest">Since 2006.</span>
+                    </>
+                  ) : cmsData.aboutHeroTitle.includes('Since') ? (
                     <>{cmsData.aboutHeroTitle.split('Since')[0]}<br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 drop-shadow-2xl italic tracking-tightest">Since{cmsData.aboutHeroTitle.split('Since')[1]}</span></>
+                    <span className="text-white drop-shadow-2xl italic tracking-tightest">Since{cmsData.aboutHeroTitle.split('Since')[1]}</span></>
                   ) : cmsData.aboutHeroTitle}
                 </motion.h1>
 
@@ -191,7 +196,9 @@ const About = () => {
                   transition={{ delay: 0.5 }}
                   className="text-sm md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 relative z-10 font-normal px-2 md:px-8"
                 >
-                  {cmsData.aboutHeroDescription}
+                  {cmsData.aboutHeroDescription.includes('premier overseas education') 
+                    ? 'FTI Consultants is a leading overseas education consultancy with a strong presence in Pakistan and the UK. With over 20 years of experience, we guide students in choosing the right program and institution for a successful academic journey.'
+                    : cmsData.aboutHeroDescription}
                 </motion.p>
 
                 <div className="flex flex-wrap justify-center gap-6 relative z-10">
@@ -202,7 +209,7 @@ const About = () => {
                     <Button size="lg" className="rounded-full px-12 h-16 text-lg font-black shadow-[0_30px_60px_-15px_rgba(249,115,22,0.6)] bg-primary hover:bg-orange-600 border-2 border-white/20 transition-all duration-500 group overflow-hidden relative" asChild>
                       <Link to="/free-consultation" className="flex items-center gap-4">
                         <span className="relative z-10 flex items-center gap-4 text-white">
-                          Start Strategy Session
+                          Start Your Assessment
                           <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-700" />
                         </span>
                         {/* Light sweep animation */}
@@ -257,12 +264,12 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 1 }}
                     src="/ceo.jpg"
-                    alt="Zahoor Ilahi"
+                    alt="Zahoor Elahi"
                     className="w-full h-[500px] object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90" />
                   <div className="absolute bottom-0 left-0 w-full p-6 md:p-10">
-                    <p className="font-black text-2xl md:text-3xl text-white mb-1 md:mb-2 tracking-tight">Zahoor Ilahi</p>
+                    <p className="font-black text-2xl md:text-3xl text-white mb-1 md:mb-2 tracking-tight">Zahoor Elahi</p>
                     <div className="flex items-center gap-3">
                       <p className="text-primary font-black text-[10px] md:text-xs tracking-[0.4em] uppercase">Founder & CEO</p>
                       <div className="h-0.5 w-6 md:w-10 bg-primary/40 rounded-full" />
@@ -279,7 +286,7 @@ const About = () => {
                 className="space-y-6 md:space-y-10"
               >
                 <div className="relative inline-block">
-                  <span className="text-primary font-black text-xs md:text-sm tracking-[0.4em] uppercase mb-4 block">Director's Message</span>
+                  <span className="text-primary font-black text-xs md:text-sm tracking-[0.4em] uppercase mb-4 block">Message of CEO</span>
                   <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent rounded-full" />
                 </div>
 
@@ -288,8 +295,8 @@ const About = () => {
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   className="text-3xl md:text-6xl font-black text-white leading-[1.2] md:leading-[1.1] tracking-tighter"
                 >
-                  From One Student <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">To Every Dreamer</span>
+                  20+ Years of Excellence <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">11,000+ Success Stories</span>
                 </motion.h2>
 
                 <div className="space-y-8">
@@ -324,7 +331,7 @@ const About = () => {
                     </p>
                     <div className="mt-10 flex items-center justify-between relative z-10">
                       <div className="flex flex-col">
-                        <span className="text-primary font-black text-2xl italic tracking-tighter">Zahoor Ilahi</span>
+                        <span className="text-primary font-black text-2xl italic tracking-tighter">Zahoor Elahi</span>
                         <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-1">Official Seal of Commitment</span>
                       </div>
                       <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-2xl group-hover:scale-110 transition-transform">

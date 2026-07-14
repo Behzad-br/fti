@@ -17,14 +17,16 @@ import {
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
+import { useAuth } from '@/context/AuthContext';
 
 const AdminLayout = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+    const { user, logout } = useAuth();
 
     const handleLogout = () => {
-        // Simulate logout
+        logout();
         navigate('/admin/login');
     };
 
@@ -166,12 +168,14 @@ const AdminLayout = () => {
                                 className="flex items-center gap-3 p-2 mb-4 bg-white rounded-xl shadow-sm border border-slate-100"
                             >
                                 <Avatar className="h-10 w-10 border-2 border-slate-50">
-                                    <AvatarImage src="https://github.com/shadcn.png" />
-                                    <AvatarFallback className="bg-primary/5 text-primary text-xs font-bold">AD</AvatarFallback>
+                                    <AvatarImage src={undefined} />
+                                    <AvatarFallback className="bg-primary/5 text-primary text-xs font-bold">
+                                        {user?.name ? user.name.slice(0, 2).toUpperCase() : 'AD'}
+                                    </AvatarFallback>
                                 </Avatar>
                                 <div className="overflow-hidden">
-                                    <p className="text-sm font-bold truncate text-slate-800">Admin User</p>
-                                    <p className="text-[11px] text-slate-500 truncate font-medium">admin@fti.edu.pk</p>
+                                    <p className="text-sm font-bold truncate text-slate-800">{user?.name ?? 'Admin User'}</p>
+                                    <p className="text-[11px] text-slate-500 truncate font-medium">{user?.email ?? '—'}</p>
                                 </div>
                             </motion.div>
                         )}

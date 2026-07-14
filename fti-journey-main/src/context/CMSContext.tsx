@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import { Event, GalleryItem, events, eventGallery } from '@/data/events';
+import { cmsApi } from '@/services/api';
 
 // Define the shape of our CMS Data
 export interface University {
@@ -111,8 +112,8 @@ const defaultCMSData: CMSData = {
     { id: '25', name: "Queen's University Belfast",   logo: 'https://www.google.com/s2/favicons?sz=128&domain=qub.ac.uk',       country: 'UK' },
   ],
 
-  aboutHeroTitle: "Nurturing Careers Since 2012.",
-  aboutHeroDescription: "FTI Consultants is a premier overseas education consultancy providing expert guidance and Elite language training from our global hubs.",
+  aboutHeroTitle: "Nurturing Careers Since 2006.",
+  aboutHeroDescription: "FTI Consultants is a leading overseas education consultancy with a strong presence in Pakistan and the UK. With over 20 years of experience, we guide students in choosing the right program and institution for a successful academic journey.",
 
   destinationsHeroTitle: "Choose Your Dream Destination",
   destinationsHeroDescription: "Explore top study destinations worldwide. We help you find the perfect country based on your goals, budget, and career aspirations.",
@@ -132,43 +133,89 @@ const defaultCMSData: CMSData = {
 
 interface CMSContextType {
   cmsData: CMSData;
-  updateCMSData: (newData: Partial<CMSData>) => void;
+  updateCMSData: (newData: Partial<CMSData>) => Promise<void>;
   uploadImage: (file: File) => Promise<string>;
+  isSyncing: boolean;
 }
 
 const CMSContext = createContext<CMSContextType | undefined>(undefined);
 
 export const CMSProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cmsData, setCmsData] = useState<CMSData>(() => {
+    // Start with localStorage data instantly (no flicker)
     const savedData = localStorage.getItem('fti_cms_data');
     if (savedData) {
       try {
         const parsed = JSON.parse(savedData);
-        // Ensure new fields added after initial save are always included
         return {
           ...defaultCMSData,
           ...parsed,
-          // Always merge default lists if missing
           homeUniversityPartners: parsed.homeUniversityPartners ?? defaultCMSData.homeUniversityPartners,
           eventsList: parsed.eventsList ?? defaultCMSData.eventsList,
           eventGalleryList: parsed.eventGalleryList ?? defaultCMSData.eventGalleryList,
         };
-
       } catch (e) {
-        console.error("Failed to parse CMS data", e);
+        console.error("Failed to parse CMS data from localStorage", e);
       }
     }
     return defaultCMSData;
   });
+  const [isSyncing, setIsSyncing] = useState(false);
 
+  // ── On mount: fetch live CMS data from backend ──────────────────────────
+  useEffect(() => {
+    const fetchFromBackend = async () => {
+      try {
+        const backendData = await cmsApi.get();
+        // Backend returns { global_cms_data: { ... } } shape
+        const remotePayload = backendData['global_cms_data'] ?? backendData;
+
+        if (remotePayload && typeof remotePayload === 'object' && Object.keys(remotePayload).length > 0) {
+          const merged: CMSData = {
+            ...defaultCMSData,
+            ...remotePayload,
+            homeUniversityPartners:
+              remotePayload.homeUniversityPartners ?? defaultCMSData.homeUniversityPartners,
+            eventsList:
+              remotePayload.eventsList ?? defaultCMSData.eventsList,
+            eventGalleryList:
+              remotePayload.eventGalleryList ?? defaultCMSData.eventGalleryList,
+          };
+          setCmsData(merged);
+          // Keep localStorage in sync with backend truth
+          localStorage.setItem('fti_cms_data', JSON.stringify(merged));
+        }
+      } catch {
+        // Backend unavailable — localStorage fallback is already in state
+        console.warn('[CMS] Backend unavailable, using localStorage fallback.');
+      }
+    };
+
+    fetchFromBackend();
+  }, []);
+
+  // ── Persist to localStorage whenever data changes ───────────────────────
   useEffect(() => {
     localStorage.setItem('fti_cms_data', JSON.stringify(cmsData));
   }, [cmsData]);
 
-  const updateCMSData = (newData: Partial<CMSData>) => {
+  // ── updateCMSData: update state, localStorage AND backend ──────────────
+  const updateCMSData = useCallback(async (newData: Partial<CMSData>) => {
+    // Optimistic local update first (instant UI feedback)
     setCmsData(prev => ({ ...prev, ...newData }));
-  };
 
+    // Then persist to backend (fire and forget with error handling)
+    setIsSyncing(true);
+    try {
+      await cmsApi.update(newData);
+    } catch (err) {
+      console.warn('[CMS] Failed to sync to backend, saved locally only.', err);
+    } finally {
+      setIsSyncing(false);
+    }
+  }, []);
+
+  // ── uploadImage: convert file to base64 string ─────────────────────────
   const uploadImage = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -181,7 +228,7 @@ export const CMSProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   };
 
   return (
-    <CMSContext.Provider value={{ cmsData, updateCMSData, uploadImage }}>
+    <CMSContext.Provider value={{ cmsData, updateCMSData, uploadImage, isSyncing }}>
       {children}
     </CMSContext.Provider>
   );

@@ -7,7 +7,7 @@ import Marquee from 'react-fast-marquee';
 const destinations = [
   {
     name: 'United Kingdom',
-    image: 'https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/uk-banner.jpg',
     path: '/destinations/uk',
     universities: '160+ Universities',
     fees: '£15000-25000 Annual',
@@ -33,7 +33,7 @@ const destinations = [
     name: 'Ireland',
     image: 'https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     path: '/destinations/ireland',
-    universities: 'Top Institutes',
+    universities: '30+ Universities',
     fees: '€10000-25000 Annual',
     visa: 'Up to 2 Years Post Study',
   },
@@ -46,12 +46,60 @@ const destinations = [
     visa: 'Up to 3 Years OPT',
   },
   {
-    name: 'Europe',
-    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    path: '/destinations/europe',
-    universities: '1000+ Universities',
-    fees: '€3000-15000 Annual',
-    visa: 'Up to 2 Years Visa',
+    name: 'Hungary',
+    image: 'https://images.unsplash.com/photo-1541849546-216549ae216d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/hungary',
+    universities: '65+ Universities',
+    fees: '€3000-8000 Annual',
+    visa: 'Up to 3 Years Post Study',
+  },
+  {
+    name: 'Turkey',
+    image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/turkey',
+    universities: '200+ Universities',
+    fees: '$3000-10000 Annual',
+    visa: 'Up to 2 Years Residence',
+  },
+  {
+    name: 'Finland',
+    image: 'https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/finland',
+    universities: '40+ Universities',
+    fees: '€8000-18000 Annual',
+    visa: 'Up to 2 Years Post Study',
+  },
+  {
+    name: 'Cyprus',
+    image: 'https://images.unsplash.com/photo-1558981285-6f0c68a8df6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/cyprus',
+    universities: '25+ Universities',
+    fees: '€5000-12000 Annual',
+    visa: 'Up to 2 Years Post Study',
+  },
+  {
+    name: 'Malaysia',
+    image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/malaysia',
+    universities: '100+ Universities',
+    fees: '$4000-12000 Annual',
+    visa: 'Up to 1 Year Post Study',
+  },
+  {
+    name: 'Sweden',
+    image: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/sweden',
+    universities: '50+ Universities',
+    fees: '€10000-20000 Annual',
+    visa: 'Up to 1 Year Job Search',
+  },
+  {
+    name: 'New Zealand',
+    image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    path: '/destinations/new-zealand',
+    universities: '30+ Universities',
+    fees: '$18000-28000 Annual',
+    visa: 'Up to 3 Years Post Study',
   },
 ];
 
@@ -87,7 +135,7 @@ const DestinationsSection = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
-            We help students get admissions in top universities across the world's most popular study destinations.
+            FTI helps students to secure admission to leading universities across the world's most popular study destinations.
           </p>
 
           {/* Navigation Buttons - Smaller and Centered */}

@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { useAuth } from '@/context/AuthContext';
 
 // Form validation schema
 const loginSchema = z.object({
@@ -23,6 +24,7 @@ const AdminLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [loginRole, setLoginRole] = useState<'admin' | 'employee'>('admin');
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const form = useForm<LoginFormValues>({
         resolver: zodResolver(loginSchema),
@@ -34,20 +36,19 @@ const AdminLogin = () => {
 
     const onSubmit = async (data: LoginFormValues) => {
         setIsLoading(true);
-
-        // Simulate API call
-        setTimeout(() => {
-            setIsLoading(false);
-            console.log("Login data:", data);
-
-            // For demo purposes, just toast success
+        try {
+            await login(data.email, data.password, loginRole);
             toast.success("Login successful", {
                 description: `Welcome back, ${loginRole === 'admin' ? 'Administrator' : 'Employee'}!`,
             });
-
-            // Redirect to dashboard (in a real app, this might go to different dashboards based on role)
-            setTimeout(() => navigate('/admin/dashboard'), 500);
-        }, 1500);
+            navigate('/admin/dashboard');
+        } catch (error: unknown) {
+            const message =
+                error instanceof Error ? error.message : 'Login failed. Please try again.';
+            toast.error("Login failed", { description: message });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (

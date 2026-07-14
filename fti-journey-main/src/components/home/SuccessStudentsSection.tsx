@@ -18,18 +18,14 @@ const SuccessStudentsSection = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <span className="inline-block py-1 px-4 rounded-full bg-orange-50 text-orange-600 font-semibold text-sm mb-4 border border-orange-100 uppercase tracking-wider">
-                        OUR PROUD MOMENTS
-                    </span>
+
                     <h2 className="text-3xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight">
-                        Visa Success{' '}
+                        Success{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                             Stories
                         </span>
                     </h2>
-                    <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg">
-                        Real success, real results. Browse through our latest visa approvals and join the league of successful students.
-                    </p>
+
                 </motion.div>
             </div>
 

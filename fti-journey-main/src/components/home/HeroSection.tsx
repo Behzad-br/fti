@@ -15,7 +15,7 @@ const HeroSection = () => {
   const heroTexts = [
     "YOUR GATEWAY TO GLOBAL EDUCATION",
     "EXPERT VISA & CAREER COUNSELLING",
-    "TRUSTED BY 11000+ STUDENTS"
+    "TRUSTED BY 11,000+ STUDENTS"
   ];
 
   useEffect(() => {
@@ -183,9 +183,9 @@ const HeroSection = () => {
           >
             {[
               { icon: Clock,        text: "20+ Years of Excellence",       color: "text-blue-500",   bg: "bg-blue-50" },
-              { icon: Users,        text: "11K+ Success Stories",           color: "text-green-500", bg: "bg-green-50" },
+              { icon: Users,        text: "11,000+ Success Stories",           color: "text-green-500", bg: "bg-green-50" },
               { icon: GraduationCap, text: "Official Uni Representative",   color: "text-purple-500",bg: "bg-purple-50" },
-              { icon: BookOpen,     text: "Official IELTS Test Center",      color: "text-orange-500",bg: "bg-orange-50" },
+              { icon: BookOpen,     text: "Official IELTS Test Centre",      color: "text-orange-500",bg: "bg-orange-50" },
             ].map((item, idx) => (
               <motion.div
                 key={idx}

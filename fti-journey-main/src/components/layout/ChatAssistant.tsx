@@ -54,7 +54,7 @@ const ChatAssistant = () => {
 
         // 3. STUDY DESTINATIONS - UK
         if (q.includes('uk') || q.includes('london') || q.includes('united kingdom') || q.includes('england')) {
-            return "The **United Kingdom** is one of our specialty destinations! \n\nWe represent over **160+ Universities**. Key benefits:\n• 2-Year Post-Study Work Visa.\n• Scholarships up to £5,000.\n• High Visa Success Rate (98%+).\n• Gap accepted up to 10 years for some programs.\n\nDo you want to check the university list for your specific course?";
+            return "The **United Kingdom** is one of our specialty destinations! \n\nWe represent over **160+ Universities**. Key benefits:\n• 2-Year Post-Study Work Visa.\n• Scholarships up to £5,000.\n• High Visa Success Rate (90%+).\n• Gap accepted up to 10 years for some programs.\n\nDo you want to check the university list for your specific course?";
         }
 
         // 4. STUDY DESTINATIONS - CANADA
@@ -84,7 +84,7 @@ const ChatAssistant = () => {
 
         // 9. VISA SUCCESS / STUDENTS GUIDED
         if (q.includes('success') || q.includes('stori') || q.includes('student') || q.includes('count') || q.includes('many')) {
-            return "Alhamdulillah, FTI Journey has guided over **10,000+ students** with a remarkable **98% Visa Success Rate**. We are the most trusted name in overseas education in Pakistan. \n\nYou can see our latest visa success stories on the homepage marquee!";
+            return "Alhamdulillah, FTI Journey has guided over **11,000+ students** with a remarkable **90% Visa Success Rate**. We are the most trusted name in overseas education in Pakistan. \n\nYou can see our latest visa success stories on the homepage marquee!";
         }
 
         // 10. CONTACT / PHONE / WHATSAPP

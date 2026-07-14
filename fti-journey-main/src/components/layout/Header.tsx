@@ -22,6 +22,7 @@ const destinations = [
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Profile', path: '/about' },
+  { name: 'Destinations', path: '/destinations' },
   { name: 'Services', path: '/services' },
   { name: 'Events', path: '/events' },
   { name: 'IELTS', path: '/ielts' },
@@ -74,49 +75,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.slice(0, 2).map((link) =>
-                link.path.startsWith('http') ? (
-                  <a
-                    key={link.path}
-                    href={link.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`px-3 py-2 rounded-md text-base font-bold transition-colors text-foreground hover:text-primary hover:bg-accent`}
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`px-3 py-2 rounded-md text-base font-bold transition-colors ${location.pathname === link.path
-                      ? 'text-primary bg-accent'
-                      : 'text-foreground hover:text-primary hover:bg-accent'
-                      }`}
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
-
-              {/* Destinations Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="px-3 py-2 rounded-md text-base font-bold text-foreground hover:text-primary hover:bg-accent transition-colors flex items-center gap-1">
-                  Destinations <ChevronDown className="h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="bg-white shadow-card border-border z-50">
-                  {destinations.map((dest) => (
-                    <DropdownMenuItem key={dest.path} asChild>
-                      <Link to={dest.path} className="cursor-pointer">
-                        {dest.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {navLinks.slice(2).map((link) =>
+            <nav className="hidden lg:flex items-center gap-1">              {navLinks.map((link) =>
                 link.path.startsWith('http') ? (
                   <a
                     key={link.path}
@@ -202,20 +161,7 @@ const Header = () => {
                   )
                 )}
 
-                <div className="py-2">
-                  <p className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Destinations
-                  </p>
-                  {destinations.map((dest) => (
-                    <Link
-                      key={dest.path}
-                      to={dest.path}
-                      className="block px-6 py-2 rounded-lg text-sm text-foreground hover:text-primary hover:bg-accent transition-colors"
-                    >
-                      {dest.name}
-                    </Link>
-                  ))}
-                </div>
+
               </div>
 
               <div className="mt-4 pt-4 border-t space-y-2">
