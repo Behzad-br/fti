@@ -104,7 +104,7 @@ const destinations = [
     name: 'Cyprus',
     flag: '🇨🇾',
     path: '/destinations/cyprus',
-    image: 'https://images.unsplash.com/photo-1558981285-6f0c68a8df6d?w=800&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200',
     description: 'EU-recognised degrees in English in a stunning Mediterranean island setting.',
     highlights: ['EU recognised degrees', 'English programs', 'Mediterranean life'],
     color: 'from-orange-700 to-amber-500',

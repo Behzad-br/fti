@@ -271,7 +271,7 @@ const countryData: Record<string, {
   cyprus: {
     name: 'Cyprus',
     flag: '🇨🇾',
-    image: 'https://images.unsplash.com/photo-1558981285-6f0c68a8df6d?w=1200&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200',
     subtitle: 'English-Taught Programs in the Mediterranean',
     overview: 'Cyprus offers EU-recognised degrees through English-taught programs in a beautiful Mediterranean setting. As an EU member state, Cyprus provides students with internationally recognised qualifications and a vibrant student lifestyle.',
     benefits: ['EU recognised degrees', 'English-taught programs', 'Mediterranean lifestyle', 'Safe country', 'Affordable cost'],

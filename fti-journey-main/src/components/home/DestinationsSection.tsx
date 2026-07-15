@@ -71,7 +71,7 @@ const destinations = [
   },
   {
     name: 'Cyprus',
-    image: 'https://images.unsplash.com/photo-1558981285-6f0c68a8df6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200',
     path: '/destinations/cyprus',
     universities: '25+ Universities',
     fees: '€5000-12000 Annual',

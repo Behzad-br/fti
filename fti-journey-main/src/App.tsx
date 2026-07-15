@@ -29,6 +29,18 @@ import IELTS              from '@/features/ielts/IELTS.page';
 import PTE                from '@/features/pte/PTE.page';
 import Destinations       from '@/features/destinations/Destinations.page';
 import CountryDetail      from '@/features/destinations/CountryDetail.page';
+import TurkeyDetail       from '@/features/destinations/TurkeyDetail.page';
+import HungaryDetail      from '@/features/destinations/HungaryDetail.page';
+import CanadaDetail       from '@/features/destinations/CanadaDetail.page';
+import NewZealandDetail   from '@/features/destinations/NewZealandDetail.page';
+import IrelandDetail      from '@/features/destinations/IrelandDetail.page';
+import SwedenDetail       from '@/features/destinations/SwedenDetail.page';
+import MalaysiaDetail     from '@/features/destinations/MalaysiaDetail.page';
+import CyprusDetail       from '@/features/destinations/CyprusDetail.page';
+import USADetail          from '@/features/destinations/USADetail.page';
+import FinlandDetail      from '@/features/destinations/FinlandDetail.page';
+import UKDetail           from '@/features/destinations/UKDetail.page';
+import AustraliaDetail    from '@/features/destinations/AustraliaDetail.page';
 import Contact            from '@/features/contact/Contact.page';
 import Apply              from '@/features/apply/Apply.page';
 import ApplyIELTS         from '@/features/apply/ApplyIELTS.page';
@@ -73,6 +85,18 @@ const AnimatedRoutes = () => {
         <Route path="/ielts"             element={<PageTransition><IELTS /></PageTransition>} />
         <Route path="/pte"               element={<PageTransition><PTE /></PageTransition>} />
         <Route path="/destinations"      element={<PageTransition><Destinations /></PageTransition>} />
+        <Route path="/destinations/turkey" element={<PageTransition><TurkeyDetail /></PageTransition>} />
+        <Route path="/destinations/hungary" element={<PageTransition><HungaryDetail /></PageTransition>} />
+        <Route path="/destinations/canada" element={<PageTransition><CanadaDetail /></PageTransition>} />
+        <Route path="/destinations/new-zealand" element={<PageTransition><NewZealandDetail /></PageTransition>} />
+        <Route path="/destinations/ireland" element={<PageTransition><IrelandDetail /></PageTransition>} />
+        <Route path="/destinations/sweden" element={<PageTransition><SwedenDetail /></PageTransition>} />
+        <Route path="/destinations/malaysia" element={<PageTransition><MalaysiaDetail /></PageTransition>} />
+        <Route path="/destinations/cyprus" element={<PageTransition><CyprusDetail /></PageTransition>} />
+        <Route path="/destinations/usa" element={<PageTransition><USADetail /></PageTransition>} />
+        <Route path="/destinations/finland" element={<PageTransition><FinlandDetail /></PageTransition>} />
+        <Route path="/destinations/uk" element={<PageTransition><UKDetail /></PageTransition>} />
+        <Route path="/destinations/australia" element={<PageTransition><AustraliaDetail /></PageTransition>} />
         <Route path="/destinations/:country" element={<PageTransition><CountryDetail /></PageTransition>} />
         <Route path="/contact"           element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/apply"             element={<PageTransition><Apply /></PageTransition>} />
