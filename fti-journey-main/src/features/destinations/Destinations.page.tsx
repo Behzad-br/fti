@@ -243,7 +243,7 @@ const Destinations = () => {
 
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {destinations.map((dest, index) => (
+              {[...destinations].sort((a, b) => a.name.localeCompare(b.name)).map((dest, index) => (
                 <motion.div
                   key={dest.name}
                   initial={{ opacity: 0, y: 40 }}
@@ -308,45 +308,6 @@ const Destinations = () => {
           </div>
         </section>
 
-        {/* ── WHY FTI BANNER ── */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <img
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&h=600&fit=crop"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute top-10 left-10 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px]" />
-          <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]" />
-
-          <div className="container mx-auto px-4 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="inline-block bg-orange-500/20 border border-orange-500/30 text-orange-400 font-bold text-sm uppercase tracking-widest px-5 py-2 rounded-full mb-6">
-                Start Your Journey
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Not Sure Which Country{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
-                  Is Right for You?
-                </span>
-              </h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
-                Our expert counsellors at FTI will assess your profile, goals, and budget to guide you towards the perfect study destination.
-              </p>
-              <Link
-                to="/free-consultation"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-orange-500/30"
-              >
-                Book a Free Consultation <ArrowRight className="w-6 h-6" />
-              </Link>
-            </motion.div>
-          </div>
-        </section>
 
       </div>
     </Layout>

@@ -155,7 +155,7 @@ const HeroSection = () => {
             variants={itemVariants}
             className="text-lg md:text-2xl text-muted-foreground/80 mb-12 max-w-2xl leading-relaxed font-medium mx-auto"
           >
-            Empowering students to achieve their dreams with expert guidance for <span className="text-foreground font-bold border-b-2 border-primary/20 pb-0.5">Australia, Canada, Europe, USA & UK</span>.
+            Empowering students to achieve their dreams with expert guidance for <span className="text-foreground font-bold border-b-2 border-primary/20 pb-0.5">Australia, Canada, Europe, UK, USA, etc.</span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -184,8 +184,8 @@ const HeroSection = () => {
             {[
               { icon: Clock,        text: "20+ Years of Excellence",       color: "text-blue-500",   bg: "bg-blue-50" },
               { icon: Users,        text: "11,000+ Success Stories",           color: "text-green-500", bg: "bg-green-50" },
-              { icon: GraduationCap, text: "Official Uni Representative",   color: "text-purple-500",bg: "bg-purple-50" },
-              { icon: BookOpen,     text: "Official IELTS Test Centre",      color: "text-orange-500",bg: "bg-orange-50" },
+              { icon: GraduationCap, text: "Official University Rep",   color: "text-purple-500",bg: "bg-purple-50" },
+              { icon: BookOpen,     text: "Authorized IELTS Test Centre",      color: "text-orange-500",bg: "bg-orange-50" },
             ].map((item, idx) => (
               <motion.div
                 key={idx}

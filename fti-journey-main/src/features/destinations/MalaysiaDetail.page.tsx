@@ -603,7 +603,20 @@ const MalaysiaDetail = () => {
                     >
                       <Link to="/free-consultation">Get Free Consultation</Link>
                     </Button>
+
                   </motion.div>
+
+                  {/* Disclaimer Card */}
+                  <div className="mt-6 bg-orange-50/50 border border-orange-100 rounded-xl p-4 dark:bg-orange-950/20 dark:border-orange-900/50 relative z-10">
+                    <div className="flex items-start gap-3">
+                      <div className="mt-0.5">
+                        <Info className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                      </div>
+                      <p className="text-xs text-orange-800 dark:text-orange-300 leading-relaxed font-medium">
+                        Information may vary over time. Contact our team for the most up-to-date details.
+                      </p>
+                    </div>
+                  </div>
                   </div>
 
               </div>

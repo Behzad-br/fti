@@ -6,7 +6,6 @@ const ieltsFeatures = [
   'Biggest campus in Gujranwala Division',
   'State-of-the-art classrooms',
   'AEO/British Council trained faculty',
-  'Small batch size (max 15 students)',
   'Mock tests & feedback sessions',
 ];
 
@@ -37,7 +36,7 @@ const TestPrepSection = () => {
             <div className="gradient-primary p-6 md:p-8 flex justify-between items-center overflow-hidden relative">
               <div className="relative z-10 w-2/3">
                 <h3 className="text-2xl font-bold text-white mb-1 flex items-center gap-2">
-                  IELTS Prep
+                  IELTS Preparation
                 </h3>
                 <p className="text-white/90 text-sm font-medium">International English Language Testing System</p>
               </div>
@@ -71,9 +70,9 @@ const TestPrepSection = () => {
             <div className="bg-gradient-to-r from-orange-500 to-amber-500 p-6 md:p-8 flex justify-between items-center overflow-hidden relative">
               <div className="relative z-10 w-2/3">
                 <h3 className="text-2xl font-bold text-white mb-1">
-                  PTE Academic
+                  PTE
                 </h3>
-                <p className="text-white/90 text-sm font-medium">Pearson Test of English Academic</p>
+                <p className="text-white/90 text-sm font-medium">Pearson Test of English</p>
               </div>
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm relative z-10 group-hover:scale-110 transition-transform duration-500 shrink-0">
                 <Laptop className="w-8 h-8 text-white/90" strokeWidth={1.5} />

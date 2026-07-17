@@ -46,16 +46,16 @@ const PartnershipSection = () => {
                     </motion.div>
                     
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tighter">
-                        Proud to be{' '}
+                        Official IELTS{' '}
                         <span className="relative inline-block px-1">
                              <div className="absolute inset-0 bg-orange-400/20 blur-xl rounded-full" />
-                             <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-black">OFFICIAL</span>
+                             <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-black">Registration Center</span>
                         </span>
                         <br />
-                        Testing Center of <span className="text-slate-900 border-b-4 border-orange-500 pb-1">AeU</span>
+                        of AEO & British Council
                     </h2>
                     <p className="text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
-                        FTI is officially recognized and awarded by top international testing bodies and universities for our excellence in education and global mobility.
+                        We are proud to be the official IELTS registration and testing center for both AEO and the British Council, ensuring a seamless and authentic testing experience.
                     </p>
                 </motion.div>
 
@@ -80,9 +80,6 @@ const PartnershipSection = () => {
                                 src="/british-council-logo.png" 
                                 alt="British Council" 
                                 className="h-full w-auto object-contain drop-shadow-sm rounded-lg" 
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/British_Council_logo.svg/512px-British_Council_logo.svg.png';
-                                }}
                             />
                         </div>
                         <p className="text-slate-500 text-center mb-6 md:mb-8 font-medium text-sm md:text-base">Official Testing Centre & Platinum Partner for IELTS examinations.</p>
@@ -95,7 +92,7 @@ const PartnershipSection = () => {
                         </div>
                     </motion.div>
 
-                    {/* AeU Card */}
+                    {/* AEO Card */}
                     <motion.div
                         variants={cardVariants}
                         whileHover={{ y: -10 }}
@@ -106,15 +103,12 @@ const PartnershipSection = () => {
 
                         <div className="h-16 md:h-20 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-105 transition-all duration-500">
                             <img 
-                                src="https://aeu.edu.my/wp-content/uploads/2021/04/aeu-logo.png" 
-                                alt="AeU - Asia e University" 
+                                src="/aeo-logo.png" 
+                                alt="AEO Pakistan" 
                                 className="h-full w-auto object-contain drop-shadow-sm rounded-lg" 
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).src = 'https://www.google.com/s2/favicons?sz=128&domain=aeu.edu.my';
-                                }}
                             />
                         </div>
-                        <p className="text-slate-500 text-center mb-6 md:mb-8 font-medium text-sm md:text-base">Official Testing Centre for Asia e University (AeU) international programs.</p>
+                        <p className="text-slate-500 text-center mb-6 md:mb-8 font-medium text-sm md:text-base">Official IELTS Registration and Testing Center for AEO Pakistan.</p>
 
                         <div className="flex flex-col items-center gap-3">
                             <span className="text-xs font-black text-orange-600 uppercase tracking-[0.2em] bg-white px-4 py-2 rounded-full border border-orange-200 shadow-sm">Official Center</span>

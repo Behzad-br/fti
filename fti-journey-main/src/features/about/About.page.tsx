@@ -49,12 +49,13 @@ const journeyEvents = [
   { year: '2011', title: 'Wazirabad Branch', description: 'Opened our first branch in Wazirabad, extending our reach to students across the wider region.' },
   { year: '2014', title: 'London Office', description: 'Established a presence in London, UK — bridging Pakistani students directly with top European institutions.' },
   { year: '2015', title: '5,000+ Success Stories', description: 'A landmark milestone: 5,000+ students successfully placed in universities around the world.' },
-  { year: '2016', title: 'Land Acquisition', description: 'Acquired land at Sialkot Bypass Road, Near Garden Town, Gujranwala to establish a state-of-the-art purpose-built office.' },
+  { year: '2016', title: 'Head Office Land Acquisition', description: 'Acquired land at Sialkot Bypass Road, Near Garden Town, Gujranwala to establish a state-of-the-art purpose-built office.' },
   { year: '2018', title: 'New 4-Storey Headquarters', description: 'Moved into FTI\'s newly built 4-storey flagship office — a world-class facility built for student success.' },
   { year: '2019', title: '2 New Branches', description: 'Expanded further with new branches opened in Ali Pur Chatha and Bahawalpur, serving even more communities.' },
   { year: '2023', title: 'Islamabad Branch', description: 'Established the Islamabad Branch, bringing FTI\'s world-class counseling to the nation\'s capital.' },
-  { year: '2025', title: '10,000+ Success Stories & Sialkot', description: 'Celebrated 10,000+ successful student placements and inaugurated our new Sialkot Office.' },
-  { year: '2026', title: '2nd Gujranwala Branch', description: 'Opened our 2nd branch in Gujranwala — continuing our mission to make international education accessible to all.' },
+  { year: '2025', title: '10,000+ Success Stories', description: 'Celebrated 10,000+ successful student placements.' },
+  { year: '2025', title: 'Sialkot Office', description: 'Inaugurated our new Sialkot Office.' },
+  { year: '2026', title: '2nd Gujranwala Branch in Mall of Gujranwala', description: 'Opened our 2nd branch in Gujranwala — continuing our mission to make international education accessible to all.' },
 ];
 
 // Elements removed as per user request
@@ -186,8 +187,7 @@ const About = () => {
                 >
                   {cmsData.aboutHeroTitle.includes('Nurturing Careers') ? (
                     <>
-                      <span className="text-orange-500">Nurturing</span> <span className="text-green-500">Careers</span><br />
-                      <span className="text-white drop-shadow-2xl italic tracking-tightest">Since 2006.</span>
+                      <span className="text-orange-500">Nurturing</span> <span className="text-green-500">Careers</span>
                     </>
                   ) : cmsData.aboutHeroTitle.includes('Since') ? (
                     <>{cmsData.aboutHeroTitle.split('Since')[0]}<br />
@@ -202,7 +202,7 @@ const About = () => {
                   className="text-sm md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 relative z-10 font-normal px-2 md:px-8"
                 >
                   {cmsData.aboutHeroDescription.includes('premier overseas education') 
-                    ? 'FTI Consultants is a leading overseas education consultancy with a strong presence in Pakistan and the UK. With over 20 years of experience, we guide students in choosing the right program and institution for a successful academic journey.'
+                    ? 'FTI Consultants is a leading overseas education consultancy firm with a strong presence in Pakistan and UK. With over 20 years of experience, we guide students in choosing the right program and institution for a successful academic journey.'
                     : cmsData.aboutHeroDescription}
                 </motion.p>
 
@@ -296,7 +296,7 @@ const About = () => {
                   className="text-3xl md:text-6xl font-black text-white leading-[1.2] md:leading-[1.1] tracking-tighter"
                 >
                   20+ Years of Excellence <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">11,000+ Success Stories</span>
+                  <span className="text-orange-500 block mt-2 md:mt-4 tracking-normal">11,000+ Success Stories</span>
                 </motion.h2>
 
                 <div className="relative inline-block mt-3">
@@ -310,8 +310,8 @@ const About = () => {
                     className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-12 relative overflow-hidden group hover:bg-white/10 transition-colors duration-500"
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2" />
-                    <p className="italic font-bold text-xl md:text-2xl text-slate-200 leading-relaxed relative z-10">
-                      "Excellence is not an act, but a habit. At FTI, we've made it our habit to put student success at the epicenter of our operations."
+                    <p className="font-bold text-xl md:text-2xl text-slate-200 leading-relaxed relative z-10">
+                      Excellence is not an act, but a habit. At FTI, we've made it our habit to put student success at the epicenter of our operations.
                     </p>
                   </motion.div>
 
@@ -320,7 +320,7 @@ const About = () => {
                     transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     className="text-lg md:text-xl text-slate-400 leading-relaxed font-medium"
                   >
-                    "We don't just process applications; we architect careers. Our journey started in 2012 with a simple mission: to provide honest, ethical, and world-class guidance to Pakistani students seeking global education."
+                    We don't just process applications; we architect careers. Our journey started in 2012 with a simple mission: to provide honest, ethical, and world-class guidance to Pakistani students seeking global education.
                   </motion.p>
 
                   <motion.div
@@ -335,8 +335,7 @@ const About = () => {
                     </p>
                     <div className="mt-10 flex items-center justify-between relative z-10">
                       <div className="flex flex-col">
-                        <span className="text-primary font-black text-2xl italic tracking-tighter">Zahoor Elahi</span>
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-1">Official Seal of Commitment</span>
+                        <span className="text-primary font-black text-2xl tracking-tighter">Zahoor Elahi</span>
                       </div>
                       <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-2xl group-hover:scale-110 transition-transform">
                         <CheckCircle2 className="w-10 h-10 text-primary" />

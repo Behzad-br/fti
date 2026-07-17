@@ -82,7 +82,7 @@ const ServicesSection = () => {
             Foreign Education Solutions
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
-            Career counselling to visa approval, we guide you through every step of your study abroad journey
+            We guide you through every step of your study abroad journey
           </p>
         </motion.div>
 

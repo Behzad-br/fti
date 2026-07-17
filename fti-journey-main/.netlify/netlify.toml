@@ -9,7 +9,6 @@ headers = []
 publish = "C:\\Users\\behzad\\Desktop\\fti\\fti-journey-main\\fti-journey-main\\dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
-base = "C:\\Users\\behzad\\Desktop\\fti\\fti-journey-main\\fti-journey-main"
 command = "npm run build"
 
 [build.environment]

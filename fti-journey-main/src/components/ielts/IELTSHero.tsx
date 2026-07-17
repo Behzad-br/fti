@@ -7,8 +7,7 @@ const floatingIcons = [
     { Icon: BookOpen, top: '15%', left: '10%', delay: 0 },
     { Icon: Headphones, top: '65%', left: '15%', delay: 1.2 },
     { Icon: PenTool, top: '25%', right: '12%', delay: 0.5 },
-    { Icon: Mic, top: '70%', right: '8%', delay: 1.8 },
-    { Icon: Globe, top: '45%', left: '80%', delay: 2.5 }
+    { Icon: Mic, top: '70%', right: '8%', delay: 1.8 }
 ];
 
 const containerVariants = {
@@ -40,7 +39,7 @@ const IELTSHero = () => {
     useEffect(() => setMounted(true), []);
 
     return (
-        <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden bg-slate-50 pt-32 pb-20">
+        <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden bg-orange-500 pt-32 pb-20">
 
             {/* Ambient Animated Glows */}
             <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-orange-500/20 rounded-full blur-[120px] animate-pulse duration-[4000ms] mix-blend-multiply hidden md:block" />
@@ -111,43 +110,34 @@ const IELTSHero = () => {
             >
                 <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-10">
 
-                    {/* Trust Badge */}
-                    <motion.div 
-                        variants={itemVariants}
-                        whileHover={{ y: -5 }}
-                        className="inline-flex items-center gap-4 bg-white/90 backdrop-blur-2xl px-8 py-3.5 rounded-full border-2 border-orange-100 shadow-[0_12px_40px_rgba(255,140,0,0.15)] group hover:bg-white transition-all cursor-pointer hover:border-orange-200"
-                    >
-
-                        <span className="text-sm md:text-base font-bold text-slate-800 tracking-wide group-hover:text-primary transition-colors">
-                            The #1 IELTS Institute in Gujranwala
-                        </span>
-                    </motion.div>
 
                     {/* Main Title */}
                     <motion.div 
                         variants={itemVariants}
                         className="space-y-4 md:space-y-6 relative"
                     >
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.2] md:leading-[1.25] drop-shadow-sm">
-                            <span className="font-extrabold text-slate-700">Unlock Your</span> <br className="hidden md:block" />
-                            <span className="relative inline-block font-black italic text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-500 to-amber-500 pb-2 mt-1 md:mt-4 pr-2 md:pr-4">
-                                Global Potential
+                        <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] tracking-tight leading-none drop-shadow-sm text-white">
+                            <span className="relative inline-block font-black pb-2 mt-1 md:mt-4 pr-2 md:pr-4">
+                                IELTS
                                 <motion.div 
                                     initial={{ width: 0 }}
                                     animate={{ width: "100%" }}
                                     transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
-                                    className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-primary to-amber-400 rounded-full blur-sm opacity-50" 
+                                    className="absolute bottom-0 left-0 h-3 bg-gradient-to-r from-yellow-200 to-amber-400 rounded-full blur-sm opacity-50" 
                                 />
                                 <motion.div 
                                     initial={{ width: 0 }}
                                     animate={{ width: "100%" }}
                                     transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
-                                    className="absolute bottom-0 left-0 h-1.5 flex bg-gradient-to-r from-orange-300 to-primary rounded-full relative"
+                                    className="absolute bottom-0 left-0 h-2 flex bg-gradient-to-r from-yellow-100 to-yellow-300 rounded-full relative"
                                 >
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,165,0,0.8)]" />
+                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
                                 </motion.div>
                             </span>
                         </h1>
+                        <p className="text-2xl md:text-4xl font-extrabold italic text-yellow-200 mt-6 tracking-wide drop-shadow-sm">
+                            Unlock Your Global Potential
+                        </p>
                     </motion.div>
 
 
@@ -158,20 +148,38 @@ const IELTSHero = () => {
                         className="flex flex-col sm:flex-row gap-5 pt-8 w-full sm:w-auto"
                     >
                         <Link to="/apply-ielts" className="w-full sm:w-auto">
-                          <button className="w-full h-14 px-8 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-lg shadow-[0_10px_30px_-10px_rgba(249,115,22,0.5)] border-none transition-all duration-300 flex items-center justify-center">
+                          <button className="w-full h-14 px-8 rounded-2xl bg-white text-orange-600 hover:bg-orange-50 font-bold text-lg shadow-[0_10px_30px_-10px_rgba(255,255,255,0.3)] border-none transition-all duration-300 flex items-center justify-center">
                             Apply for IELTS
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                           </button>
                         </Link>
-                        
+                    </motion.div>
 
+                    {/* Partner Logos */}
+                    <motion.div 
+                        variants={itemVariants}
+                        className="flex flex-wrap items-center justify-center gap-6 md:gap-12 pt-12"
+                    >
+                        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white/20 hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                            <img 
+                                src="/british-council-logo.png" 
+                                alt="British Council" 
+                                className="h-8 md:h-12 w-auto object-contain" 
+                            />
+                        </div>
+                        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white/20 hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                            <img 
+                                src="/aeo-logo.png" 
+                                alt="AEO Pakistan" 
+                                className="h-8 md:h-12 w-auto object-contain" 
+                            />
+                        </div>
                     </motion.div>
 
                 </div>
             </motion.div>
             
-            {/* Base cinematic fade */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+            {/* Base cinematic fade removed to keep solid orange background */}
         </div>
     );
 };

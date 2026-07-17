@@ -5,106 +5,145 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
 import useScrollReveal from '@/hooks/useScrollReveal';
-import { Plane, GraduationCap, Award, BookOpen, FileCheck, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { Plane, GraduationCap, Award, BookOpen, FileCheck, ArrowRight, CheckCircle2, Sparkles, Building, Search, Mic, Home } from 'lucide-react';
 import { useCMS } from '@/store/CMSContext';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
-    id: 'counselling',
+    id: 'career-counseling',
     icon: GraduationCap,
-    title: 'Career Counselling',
-    description: 'Personalized guidance to help you choose the right country, university, and program based on your academic background, career goals, and budget.',
+    title: 'Career Counseling',
+    description: 'Expert guidance to help you discover your true potential and choose a career path that aligns with your passions and global opportunities.',
     features: [
-      'One-on-one counselling sessions',
-      'Profile evaluation and gap analysis',
-      'Country and university shortlisting',
-      'Career path guidance',
-      'Budget planning assistance',
-    ],
-    color: 'from-blue-500 to-indigo-600',
-    lightBg: 'bg-blue-50',
-    borderColor: 'border-blue-100',
-  },
-  {
-    id: 'admissions',
-    icon: FileCheck,
-    title: 'Admission Processing',
-    description: 'Complete application management from document preparation to offer letter, ensuring you present the strongest possible application.',
-    features: [
-      'Document checklist and review',
-      'Statement of Purpose guidance',
-      'Application form assistance',
-      'University communication handling',
-      'Offer letter acceptance support',
+      'One-on-one personalized sessions',
+      'Career path mapping',
+      'Future job market analysis',
+      'Skill gap assessment',
     ],
     color: 'from-orange-500 to-amber-500',
     lightBg: 'bg-orange-50',
     borderColor: 'border-orange-100',
   },
   {
-    id: 'visa',
-    icon: Plane,
-    title: 'Visa Guidance & Documentation',
-    description: 'Expert visa application support with high success rate. We prepare you thoroughly for interviews and documentation.',
+    id: 'institute-selection',
+    icon: Building,
+    title: 'Institute Selection',
+    description: 'We help you find the perfect university or college from our extensive network of elite global educational institutions.',
     features: [
-      'Visa document preparation',
-      'Financial documentation guidance',
-      'Mock visa interviews',
-      'Visa application submission support',
-      'Post-visa assistance',
+      'University ranking analysis',
+      'Campus facility evaluation',
+      'Budget and location matching',
+      'Alumni network insights',
     ],
-    color: 'from-green-500 to-emerald-600',
-    lightBg: 'bg-green-50',
-    borderColor: 'border-green-100',
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
   },
   {
-    id: 'ielts',
-    icon: BookOpen,
-    title: 'IELTS Preparation',
-    description: 'Professional IELTS training with experienced faculty in state-of-the-art classrooms. Small batches ensure personalized attention.',
+    id: 'course-selection',
+    icon: Search,
+    title: 'Course Selection',
+    description: 'Navigate through thousands of programs to select the exact course that maximizes your career prospects and academic strengths.',
     features: [
-      'All four modules covered',
-      'Regular mock tests',
-      'One-on-one speaking practice',
-      'Band score prediction',
-      'Flexible batch timings',
+      'Curriculum deep dive',
+      'Credit transfer options',
+      'Internship opportunities analysis',
+      'Post-study work rights alignment',
     ],
-    color: 'from-purple-500 to-violet-600',
-    lightBg: 'bg-purple-50',
-    borderColor: 'border-purple-100',
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
   },
   {
-    id: 'pte',
-    icon: BookOpen,
-    title: 'PTE Preparation',
-    description: 'Technology-based PTE training with AI-powered practice systems and individual online portals for comprehensive preparation.',
+    id: 'admission-processing',
+    icon: FileCheck,
+    title: 'Admission Processing',
+    description: 'End-to-end management of your university applications, ensuring flawless documentation and a compelling presentation of your profile.',
     features: [
-      'Computer-based training',
-      'AI scoring practice',
-      'Individual portal access',
-      'Pearson-aligned curriculum',
-      'Unlimited practice tests',
+      'Application form assistance',
+      'Statement of Purpose (SOP) guidance',
+      'Document verification',
+      'Direct university communication',
     ],
-    color: 'from-cyan-500 to-sky-600',
-    lightBg: 'bg-cyan-50',
-    borderColor: 'border-cyan-100',
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
   },
   {
-    id: 'scholarship',
+    id: 'scholarship-assistance',
     icon: Award,
-    title: 'Scholarship Guidance',
-    description: 'Maximize your chances of securing scholarships with our expert guidance on applications, essays, and documentation.',
+    title: 'Scholarship Assistance',
+    description: 'Maximize your chances of securing financial aid with our expert guidance on scholarship applications, essays, and criteria matching.',
     features: [
       'Scholarship opportunity research',
       'Eligibility assessment',
-      'Application essay guidance',
-      'Document preparation',
-      'Interview coaching',
+      'Application essay polishing',
+      'Fee waiver negotiations',
     ],
-    color: 'from-rose-500 to-pink-600',
-    lightBg: 'bg-rose-50',
-    borderColor: 'border-rose-100',
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
+  },
+  {
+    id: 'visa-application',
+    icon: Plane,
+    title: 'Visa Application',
+    description: 'Expert visa filing support with an industry-leading success rate. We ensure all legal and financial documentation is perfectly prepared.',
+    features: [
+      'Visa document checklist',
+      'Financial documentation guidance',
+      'Embassy form filling',
+      'Application tracking',
+    ],
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
+  },
+  {
+    id: 'interview-preparation',
+    icon: Mic,
+    title: 'Interview Preparation',
+    description: 'Comprehensive mock interviews and coaching to help you confidently face university admissions and embassy visa officers.',
+    features: [
+      'Mock visa interviews',
+      'University admission interviews',
+      'Confidence building exercises',
+      'Common question breakdowns',
+    ],
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
+  },
+  {
+    id: 'accommodation-arrangements',
+    icon: Home,
+    title: 'Accommodation Arrangements',
+    description: 'Secure safe, comfortable, and budget-friendly housing options near your campus before you even fly out to your destination.',
+    features: [
+      'On-campus housing assistance',
+      'Off-campus apartment hunting',
+      'Homestay arrangements',
+      'Lease agreement guidance',
+    ],
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
+  },
+  {
+    id: 'ielts-pte-preparation',
+    icon: BookOpen,
+    title: 'IELTS & PTE Preparation',
+    description: 'Top-tier language training with certified experts, utilizing AI-powered labs and mock tests to guarantee your target score.',
+    features: [
+      'Certified trainers',
+      'AI-powered practice portal',
+      'Unlimited mock tests',
+      'Score guarantee strategies',
+    ],
+    color: 'from-orange-500 to-amber-500',
+    lightBg: 'bg-orange-50',
+    borderColor: 'border-orange-100',
   },
 ];
 
@@ -161,188 +200,117 @@ const Services = () => {
     <Layout>
       <div className="page-transition bg-white overflow-hidden">
 
-        {/* ── ULTRA PREMIUM ANIMATED HERO ── */}
-        <section className="relative py-28 md:py-44 bg-gradient-to-br from-orange-600 via-orange-500 to-amber-500 overflow-hidden isolate min-h-[90vh] flex items-center">
-
-          {/* Animated Grid Lines */}
-          <div className="absolute inset-0 z-0" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }} />
-
-          {/* Large glowing orbs */}
-          <motion.div
-            animate={{ scale: [1, 1.3, 1], rotate: [0, 120, 0], x: [0, 40, 0], y: [0, -30, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute top-[-15%] right-[-10%] w-[600px] h-[600px] bg-white/10 rounded-full blur-[80px] pointer-events-none"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.4, 1], rotate: [0, -90, 0], x: [0, -60, 0] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-            className="absolute bottom-[-20%] left-[-10%] w-[700px] h-[700px] bg-amber-300/15 rounded-full blur-[100px] pointer-events-none"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.2, 1], y: [0, 60, 0] }}
-            transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-orange-300/10 rounded-full blur-[60px] pointer-events-none"
-          />
-
-          {/* Floating Particles */}
-          {[...Array(12)].map((_, i) => (
+        {/* ── REDESIGNED PREMIUM HERO ── */}
+        <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 overflow-hidden min-h-[50vh] flex items-center">
+          {/* Animated Background Mesh */}
+          <div className="absolute inset-0 z-0 bg-orange-500">
+            {/* Orange Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/95 via-orange-500/90 to-amber-500/80"></div>
+            
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light"></div>
+            
             <motion.div
-              key={i}
-              className="absolute rounded-full pointer-events-none"
-              style={{
-                width: `${Math.random() * 8 + 4}px`,
-                height: `${Math.random() * 8 + 4}px`,
-                left: `${10 + (i * 7)}%`,
-                top: `${15 + Math.sin(i) * 30}%`,
-                background: i % 3 === 0 ? 'rgba(255,255,255,0.6)' : i % 3 === 1 ? 'rgba(251,191,36,0.7)' : 'rgba(255,255,255,0.3)',
+              animate={{ 
+                backgroundPosition: ['0% 0%', '100% 100%'],
+                opacity: [0.3, 0.5, 0.3]
               }}
-              animate={{
-                y: [0, -30 - i * 3, 0],
-                x: [0, Math.sin(i) * 20, 0],
-                opacity: [0.3, 1, 0.3],
-                scale: [1, 1.5, 1],
-              }}
-              transition={{
-                duration: 4 + i * 0.5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: i * 0.3,
-              }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              className="absolute inset-0 bg-gradient-to-br from-orange-600/40 via-amber-500/40 to-yellow-500/40 blur-3xl -z-10"
             />
-          ))}
-
-          <div className="container mx-auto px-4 relative z-10 text-center">
+            {/* Glowing Orbs */}
             <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="max-w-5xl mx-auto"
-            >
-              {/* Badge */}
+              animate={{ y: [-20, 20, -20], x: [-20, 20, -20], scale: [1, 1.2, 1] }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/20 rounded-full blur-[100px]"
+            />
+            <motion.div
+              animate={{ y: [20, -20, 20], x: [20, -20, 20], scale: [1.2, 1, 1.2] }}
+              transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-yellow-300/20 rounded-full blur-[120px]"
+            />
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              {/* Text Content */}
               <motion.div
-                variants={itemVariants}
-                className="flex justify-center mb-8"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="flex-1 text-center lg:text-left"
               >
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, type: 'spring' }}
-                  className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white font-bold text-xs uppercase tracking-[0.2em] px-6 py-2.5 rounded-full shadow-lg"
+                <motion.h1 
+                  className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tight"
+                  variants={containerVariants}
                 >
-                  <motion.span
-                    animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    className="w-2 h-2 rounded-full bg-white inline-block"
-                  />
-                  Premium Education Services
-                </motion.span>
-              </motion.div>
+                  Comprehensive<br />
+                  <span className="text-orange-900 drop-shadow-sm">
+                    Education Solutions.
+                  </span>
+                </motion.h1>
 
-              {/* Animated Headline — word by word */}
-              <motion.h1
-                className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[1.05] tracking-tight"
-                variants={containerVariants}
-              >
-                {'Comprehensive Education Solutions.'.split(' ').map((word, wi) => (
-                  <motion.span
-                    key={wi}
-                    className="inline-block mr-4"
-                    variants={{
-                      hidden: { opacity: 0, y: 60, rotateX: -40 },
-                      visible: {
-                        opacity: 1, y: 0, rotateX: 0,
-                        transition: { duration: 0.7, delay: wi * 0.12, ease: [0.22, 1, 0.36, 1] },
-                      },
-                    }}
-                  >
-                    {word === 'Solutions.' ? (
-                      <span className="relative">
-                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-100 to-white">
-                          {word}
-                        </span>
-                        <motion.span
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ delay: 1.2, duration: 0.8, ease: 'easeOut' }}
-                          className="absolute bottom-1 left-0 right-0 h-2 bg-white/30 rounded-full origin-left z-0"
-                        />
-                      </span>
-                    ) : (
-                      <span>{word}</span>
-                    )}
-                  </motion.span>
-                ))}
-              </motion.h1>
+                <motion.p 
+                  variants={itemVariants}
+                  className="text-lg md:text-xl text-orange-50 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-10 font-medium"
+                >
+                  From initial counselling to landing in your dream country, we architect your entire global journey with elite-level precision and unmatched expertise.
+                </motion.p>
 
-              {/* Description with slide-up */}
-              <motion.p
-                variants={itemVariants}
-                className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl mx-auto font-medium mb-12"
-              >
-                {cmsData.servicesHeroDescription}
-              </motion.p>
-
-              {/* Stats row */}
-              <motion.div
-                variants={containerVariants}
-                className="flex flex-wrap justify-center gap-8 mb-12"
-              >
-                {[{ num: '15+', label: 'Years Experience' }, { num: '5,000+', label: 'Students Placed' }, { num: '98%', label: 'Visa Success Rate' }, { num: '50+', label: 'Partner Universities' }].map((stat, si) => (
-                  <motion.div
-                    key={si}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      visible: { opacity: 1, y: 0, transition: { delay: 0.8 + si * 0.1 } },
-                    }}
-                    whileHover={{ scale: 1.1, y: -4 }}
-                    className="text-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4"
-                  >
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 1 + si * 0.15 }}
-                      className="text-3xl font-black text-white"
-                    >
-                      {stat.num}
-                    </motion.p>
-                    <p className="text-white/70 text-sm font-medium">{stat.label}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* CTA Button */}
-              <motion.div variants={itemVariants}>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.97 }}
+                <motion.div 
+                  variants={itemVariants}
+                  className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
                 >
                   <Link
                     to="/free-consultation"
-                    className="inline-flex items-center gap-3 bg-white text-orange-600 font-black text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-white/30 transition-all duration-300 group"
+                    className="group relative inline-flex items-center justify-center bg-white text-orange-600 font-bold px-8 py-4 rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
                   >
-                    Start Your Journey
-                    <motion.span
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.2, repeat: Infinity }}
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.span>
+                    <span className="relative z-10 flex items-center gap-2">
+                      Start Your Journey
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                  <Link
+                    to="#services"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-orange-900 text-white font-semibold hover:bg-orange-800 transition-colors shadow-lg"
+                  >
+                    Explore Services
                   </Link>
                 </motion.div>
               </motion.div>
-            </motion.div>
-          </div>
 
-          {/* Bottom wave */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 80L1440 80L1440 20C1200 60 900 0 720 20C540 40 240 0 0 20V80Z" fill="white"/>
-            </svg>
+              {/* Visual Element (Glass Cards) */}
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="flex-1 relative hidden lg:block"
+              >
+                <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                  <motion.div 
+                    animate={{ y: [-10, 10, -10] }} 
+                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute top-0 right-10 w-64 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl"
+                  >
+                    <Plane className="w-10 h-10 text-white mb-4 opacity-90" />
+                    <h3 className="text-white font-bold text-xl mb-2">Visa Success</h3>
+                    <p className="text-white/90 text-sm">Industry leading 98% visa approval rate across all major destinations.</p>
+                  </motion.div>
+                  
+                  <motion.div 
+                    animate={{ y: [10, -10, 10] }} 
+                    transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute bottom-10 left-0 w-72 p-6 bg-gradient-to-br from-orange-500/90 to-amber-600/90 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl z-10"
+                  >
+                    <Award className="w-10 h-10 text-white mb-4" />
+                    <h3 className="text-white font-bold text-xl mb-2">20+ Years of Excellence</h3>
+                    <p className="text-white/80 text-sm">Over two decades of trusted experience in shaping successful global careers.</p>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
+
 
         {/* ── REDESIGNED INTERACTIVE SERVICES GRID ── */}
         <section id="services" className="py-24 relative" ref={ref}>
@@ -357,11 +325,8 @@ const Services = () => {
               className="text-center mb-20"
             >
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
-                Crafting Your <span className="text-orange-500">Global Future</span>
+                Our <span className="text-orange-500">Services</span>
               </h2>
-              <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-                Discover our comprehensive suite of services designed to make your study abroad aspirations a seamless reality.
-              </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -467,7 +432,7 @@ const Services = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl"
+              className="bg-orange-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl"
             >
               {/* Dynamic CTA Background */}
               <motion.div 
@@ -490,14 +455,7 @@ const Services = () => {
                 >
                   Ready to Take the <span className="text-orange-400">First Step?</span>
                 </motion.h2>
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-slate-300 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-light"
-                >
-                  Request a callback today and let our experts map out your success story.
-                </motion.p>
+
 
                 <motion.form 
                   initial={{ opacity: 0, y: 20 }}

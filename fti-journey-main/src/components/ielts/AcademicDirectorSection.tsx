@@ -36,7 +36,7 @@ const AcademicDirectorSection = () => {
                         {/* Caption below the photo */}
                         <div className="mt-8 px-6">
                             <p className="text-white font-black text-3xl md:text-5xl mb-2 leading-none tracking-tight">Director Academics</p>
-                            <p className="text-orange-400 font-bold uppercase tracking-[0.3em] text-xs md:text-sm">Shahista Zahoor</p>
+                            <p className="text-orange-400 font-bold uppercase tracking-[0.3em] text-xs md:text-sm">Shaista Zahoor</p>
                         </div>
                     </motion.div>
 

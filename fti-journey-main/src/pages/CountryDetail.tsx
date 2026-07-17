@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, GraduationCap, Calendar, DollarSign, FileCheck, MapPin, CheckCircle, Briefcase, BookOpen, Users, Award, Clock } from 'lucide-react';
+import { ArrowRight, GraduationCap, Calendar, DollarSign, FileCheck, MapPin, CheckCircle, Briefcase, BookOpen, Users, Award, Clock, Info } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import useScrollReveal from '@/hooks/useScrollReveal';
@@ -810,6 +810,18 @@ const CountryDetail = () => {
                       <Link to="/free-consultation">Apply Now — Free Consultation</Link>
                     </Button>
                     <p className="text-xs text-muted-foreground text-center mt-2">No fee. Expert guidance guaranteed.</p>
+                  </div>
+
+                  {/* Disclaimer Card */}
+                  <div className="mt-6 bg-orange-50/50 border border-orange-100 rounded-xl p-4 dark:bg-orange-950/20 dark:border-orange-900/50">
+                    <div className="flex items-start gap-3">
+                      <div className="mt-0.5">
+                        <Info className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                      </div>
+                      <p className="text-xs text-orange-800 dark:text-orange-300 leading-relaxed font-medium">
+                        Information may vary over time. Contact our team for the most up-to-date details.
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               </div>
