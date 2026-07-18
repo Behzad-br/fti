@@ -54,7 +54,7 @@ const IELTSServices = () => {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl font-black text-slate-900 mb-6"
                     >
-                        Comprehensive IELTS <span className="text-orange-500">Preparation</span>
+                        IELTS <span className="text-orange-500">Preparation</span>
                     </motion.h2>
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
