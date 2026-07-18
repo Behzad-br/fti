@@ -59,8 +59,8 @@ const IELTS = () => {
         <IELTSHero />
 
         <div className="relative z-10">
-          <PartnershipSection />
           <AEOTestingCenter />
+          <PartnershipSection />
           <AcademicDirectorSection />
           <IELTSServices />
         </div>
