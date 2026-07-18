@@ -106,7 +106,7 @@ const AEOTestingCenter = () => {
                             <Award className="w-8 h-8 text-white drop-shadow-sm" />
                         </div>
                         <div>
-                            <div className="text-3xl md:text-4xl font-black text-white drop-shadow-sm leading-none mb-1">12+</div>
+                            <div className="text-3xl md:text-4xl font-black text-white drop-shadow-sm leading-none mb-1">20+</div>
                             <div className="text-xs sm:text-sm font-bold text-orange-100 tracking-wider uppercase">Years of Excellence</div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ const AEOTestingCenter = () => {
                         </div>
                         <div>
                             <div className="text-3xl md:text-4xl font-black text-white drop-shadow-sm leading-none mb-1">20,000+</div>
-                            <div className="text-xs sm:text-sm font-bold text-orange-100 tracking-wider uppercase">Students Empowered</div>
+                            <div className="text-xs sm:text-sm font-bold text-orange-100 tracking-wider uppercase">Students</div>
                         </div>
                     </div>
                 </motion.div>
