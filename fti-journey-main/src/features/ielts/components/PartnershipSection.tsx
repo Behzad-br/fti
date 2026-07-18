@@ -36,27 +36,15 @@ const PartnershipSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.2, type: "spring" }}
-                        className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-orange-600 font-extrabold text-xs uppercase tracking-[0.2em] mb-8 shadow-[0_8px_30px_rgba(255,165,0,0.15)] border border-orange-100"
-                    >
-                        <ShieldCheck className="w-4 h-4" /> Global Recognition
-                    </motion.div>
-                    
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tighter">
-                        Proud to be{' '}
+                        Official IELTS <br/>
                         <span className="relative inline-block px-1">
                              <div className="absolute inset-0 bg-orange-400/20 blur-xl rounded-full" />
-                             <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-black">OFFICIAL</span>
+                             <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-black">Registration Center</span>
                         </span>
                         <br />
-                        Testing Center of <span className="text-slate-900 border-b-4 border-orange-500 pb-1">AeU</span>
+                        of <span className="text-slate-900 border-b-4 border-orange-500 pb-1">AEO & British Council</span>
                     </h2>
-                    <p className="text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
-                        FTI is officially recognized and awarded by top international testing bodies and universities for our excellence in education and global mobility.
-                    </p>
                 </motion.div>
 
                 <motion.div 
