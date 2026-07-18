@@ -129,30 +129,18 @@ const IELTS = () => {
               <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-orange-600/20 rounded-full blur-[80px] mix-blend-screen pointer-events-none group-hover:scale-110 transition-transform duration-1000 hidden md:block" />
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none hidden md:block" />
 
-              <div className="grid md:grid-cols-2 gap-10 items-center relative z-10">
-                <div>
-                  <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                    Ready to Book Your <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-400 italic">Free Consultation?</span>
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-0 leading-relaxed font-medium">
-                    Online & In-Person Classes Available. Join the biggest IELTS campus in Gujranwala division and start your journey today.
-                  </p>
-                </div>
-
-                <StaggerContainer className="flex flex-col gap-4 mt-8 md:mt-0">
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button size="lg" className="w-full h-16 text-lg font-black rounded-2xl shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,165,0,0.5)] transition-all duration-300 bg-gradient-to-r from-primary to-orange-500 text-white border-none" asChild>
-                      <Link to="/free-consultation">Book Free Consultation <ArrowRight className="ml-3 w-5 h-5" /></Link>
+              <div className="flex justify-center items-center relative z-10 py-8">
+                  <motion.div
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full max-w-md"
+                  >
+                    <Button size="lg" className="w-full h-20 text-xl md:text-2xl font-black rounded-3xl shadow-[0_15px_40px_rgba(255,165,0,0.4)] hover:shadow-[0_20px_50px_rgba(255,165,0,0.6)] transition-all duration-300 bg-gradient-to-r from-primary to-orange-500 text-white border-none" asChild>
+                      <Link to="/apply-ielts">Book for Demo Class Now <ArrowRight className="ml-3 w-6 h-6" /></Link>
                     </Button>
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button variant="outline" size="lg" className="w-full h-16 text-lg font-black rounded-2xl border-2 border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-3" onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-selector'))}>
-                      <MessageCircle className="w-6 h-6 text-[#25D366] drop-shadow-[0_0_10px_rgba(37,211,102,0.8)] group-hover:scale-110 transition-transform" />
-                      Chat on WhatsApp
-                    </Button>
-                  </motion.div>
-                </StaggerContainer>
               </div>
             </motion.div>
           </div>
