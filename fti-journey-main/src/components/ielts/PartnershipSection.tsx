@@ -138,20 +138,20 @@ const PartnershipSection = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
-                                className="bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-white flex items-center gap-5 hover:shadow-[0_20px_40px_rgba(249,115,22,0.1)] transition-all group -translate-y-8 lg:-translate-y-12"
+                                className="bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-white flex items-center gap-5 hover:shadow-[0_20px_40px_rgba(249,115,22,0.1)] transition-all group -translate-y-12 lg:-translate-y-20"
                             >
-                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-slate-50 rounded-2xl flex items-center justify-center p-3 shrink-0 border border-slate-100 group-hover:border-orange-200 transition-colors">
+                                <div className="w-20 h-20 sm:w-28 sm:h-28 bg-slate-50 rounded-2xl flex items-center justify-center p-2 shrink-0 border border-slate-100 group-hover:border-orange-200 transition-colors">
                                     <img 
                                         src="/british-council-logo.png" 
                                         alt="British Council" 
-                                        className="w-full h-full object-contain"
+                                        className="w-full h-full object-contain scale-[1.4]"
                                         onError={(e) => {
                                             (e.target as HTMLImageElement).src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/British_Council_logo.svg/512px-British_Council_logo.svg.png';
                                         }}
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">British Council</h4>
+                                    <h4 className="font-bold text-slate-900 text-base sm:text-lg">British Council</h4>
                                 </div>
                             </motion.div>
 
