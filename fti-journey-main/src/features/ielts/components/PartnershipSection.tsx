@@ -34,13 +34,13 @@ const PartnershipSection = () => {
                             transition={{ delay: 0.1 }}
                             className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight mb-6"
                         >
-                            Start Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 relative">
-                                IELTS Journey
+                            Official <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 relative">
+                                IELTS Registration
                                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-orange-400/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
                                 </svg>
                             </span> <br/>
-                            with Confidence
+                            Centre
                         </motion.h2>
 
                         <motion.p 
