@@ -46,14 +46,7 @@ const IELTSServices = () => {
         <section className="py-24 bg-slate-50 relative overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.span 
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-block py-1.5 px-4 rounded-full bg-orange-100 text-orange-600 font-bold text-sm uppercase tracking-widest mb-4"
-                    >
-                        Our Core Services
-                    </motion.span>
+
                     <motion.h2 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
