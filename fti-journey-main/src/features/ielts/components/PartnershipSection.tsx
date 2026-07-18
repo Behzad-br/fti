@@ -101,56 +101,6 @@ const PartnershipSection = () => {
                         </div>
                     </motion.div>
                 </motion.div>
-
-                {/* Animated Student Registry */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mt-20 max-w-5xl mx-auto"
-                >
-                    <div className="flex items-center justify-center gap-3 mb-8">
-                        <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]" />
-                        <h3 className="text-xl md:text-2xl font-bold text-slate-800">Live Student Registry</h3>
-                    </div>
-                    
-                    <div className="relative overflow-hidden h-20 md:h-24 bg-white/50 backdrop-blur-sm rounded-[2rem] shadow-[0_10px_30px_rgba(255,165,0,0.05)] border border-orange-100 flex items-center">
-                        <div className="absolute left-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10" />
-                        <div className="absolute right-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10" />
-                        
-                        <motion.div 
-                            className="flex whitespace-nowrap items-center gap-6 px-4"
-                            animate={{ x: [0, -1500] }}
-                            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-                        >
-                            {/* Duplicate array to create seamless loop */}
-                            {[...Array(2)].map((_, i) => (
-                                <div key={i} className="flex gap-6 items-center">
-                                    {[
-                                        { name: "Ali R.", center: "British Council", date: "Just now" },
-                                        { name: "Sarah K.", center: "AEO Pakistan", date: "2 mins ago" },
-                                        { name: "Usman A.", center: "British Council", date: "5 mins ago" },
-                                        { name: "Fatima Z.", center: "AEO Pakistan", date: "8 mins ago" },
-                                        { name: "Bilal M.", center: "British Council", date: "12 mins ago" },
-                                        { name: "Ayesha S.", center: "AEO Pakistan", date: "15 mins ago" },
-                                        { name: "Zainab N.", center: "British Council", date: "20 mins ago" },
-                                        { name: "Omar F.", center: "AEO Pakistan", date: "25 mins ago" },
-                                    ].map((student, idx) => (
-                                        <div key={idx} className="flex flex-col justify-center bg-white px-6 py-3 md:py-4 rounded-2xl border border-orange-50 shadow-sm hover:border-orange-200 transition-colors">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className="font-bold text-slate-800">{student.name}</span>
-                                                <span className="text-slate-400 text-xs md:text-sm">registered for</span>
-                                                <span className="font-black text-orange-500 text-sm md:text-base">{student.center}</span>
-                                            </div>
-                                            <span className="text-[10px] md:text-xs text-slate-400 font-medium uppercase tracking-wider">{student.date}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
-                        </motion.div>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );
