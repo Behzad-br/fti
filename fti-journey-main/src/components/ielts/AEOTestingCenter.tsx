@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Building, ShieldCheck, Clock } from 'lucide-react';
+import { CheckCircle2, Building, ShieldCheck, Clock, Award, Sparkles, Zap } from 'lucide-react';
 
 const AEOTestingCenter = () => {
     return (
@@ -88,6 +88,49 @@ const AEOTestingCenter = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Stats Bar */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    className="mt-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-[2.5rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-orange-500/20 max-w-6xl mx-auto overflow-hidden relative"
+                >
+                    {/* Background glows for the bar */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+
+                    <div className="flex items-center gap-4 z-10 w-full md:w-auto">
+                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-inner shrink-0">
+                            <Award className="w-8 h-8 text-white drop-shadow-sm" />
+                        </div>
+                        <div>
+                            <div className="text-3xl md:text-4xl font-black text-white drop-shadow-sm leading-none mb-1">12+</div>
+                            <div className="text-xs sm:text-sm font-bold text-orange-100 tracking-wider uppercase">Years of Excellence</div>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 z-10 w-full md:w-auto">
+                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-inner shrink-0">
+                            <Sparkles className="w-8 h-8 text-white drop-shadow-sm" />
+                        </div>
+                        <div>
+                            <div className="text-3xl md:text-4xl font-black text-white drop-shadow-sm leading-none mb-1">OFFICIAL</div>
+                            <div className="text-xs sm:text-sm font-bold text-orange-100 tracking-wider uppercase">Testing Center</div>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 z-10 w-full md:w-auto">
+                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-inner shrink-0">
+                            <Zap className="w-8 h-8 text-white drop-shadow-sm" />
+                        </div>
+                        <div>
+                            <div className="text-3xl md:text-4xl font-black text-white drop-shadow-sm leading-none mb-1">20,000+</div>
+                            <div className="text-xs sm:text-sm font-bold text-orange-100 tracking-wider uppercase">Students Empowered</div>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
